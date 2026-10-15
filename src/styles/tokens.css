@@ -1,0 +1,127 @@
+/* ════════════════════════════════════════════════════════════════════
+   THEME TOKENS
+   Dark is the default. Light is designed separately (not an inversion).
+   `.inverse` sections take the opposite palette of the current theme:
+     dark theme  → .inverse is light
+     light theme → .inverse is dark
+   ════════════════════════════════════════════════════════════════════ */
+
+:root,
+[data-theme='light'] .inverse {
+  color-scheme: dark;
+  --bg: #10110f;
+  --bg-2: #161814;
+  --bg-3: #1e211b;
+  --surface: #191b17;
+  --surface-2: #20231d;
+  --text: #f5f3ec;
+  --muted: #a5a69e;
+  --faint: #7a7c72;
+  --accent: #a5ad78;
+  --accent-strong: #c3ca93;
+  --accent-soft: rgba(165, 173, 120, 0.12);
+  --on-accent: #10110f;
+  --sand: #c8b88e;
+  --sage: #8fa59b;
+  --fg-rgb: 245, 243, 236;
+  --bg-rgb: 16, 17, 15;
+  --line: rgba(245, 243, 236, 0.1);
+  --line-strong: rgba(245, 243, 236, 0.2);
+  --shadow-sm: 0 6px 18px -10px rgba(0, 0, 0, 0.6);
+  --shadow: 0 30px 70px -35px rgba(0, 0, 0, 0.85);
+  --nav-bg: rgba(16, 17, 15, 0.82);
+  --tip-bg: #f5f3ec;
+  --tip-fg: #10110f;
+  --arch-a: #2c3027;
+  --arch-b: #1b1d18;
+  --arch-line: rgba(165, 173, 120, 0.3);
+  --glow: rgba(165, 173, 120, 0.12);
+  --grain: 0.05;
+  /* hero photo: thin warm rim light + grounding shadow (no darkening) */
+  --img-shadow: drop-shadow(0 0 1.2px rgba(255, 242, 222, 0.55)) drop-shadow(0 0 22px rgba(245, 236, 216, 0.1))
+    drop-shadow(0 30px 40px rgba(0, 0, 0, 0.45));
+  --spot: rgba(240, 230, 205, 0.2);
+  --rim: rgba(236, 226, 200, 0.16);
+  /* scratch-card foil */
+  --foil-1: #8d9462;
+  --foil-2: #bcc292;
+  --foil-3: #6c7347;
+  --foil-ink: #10110f;
+}
+
+[data-theme='light'],
+.inverse {
+  color-scheme: light;
+  --bg: #f4f1e8;
+  --bg-2: #ece8dc;
+  --bg-3: #e3dfd1;
+  --surface: #fbf9f3;
+  --surface-2: #f1eee4;
+  --text: #171814;
+  --muted: #55574e;
+  --faint: #6d6f65;
+  --accent: #5b6334;
+  --accent-strong: #464d24;
+  --accent-soft: rgba(91, 99, 52, 0.1);
+  --on-accent: #f7f5ee;
+  --sand: #87703a;
+  --sage: #4d6a5f;
+  --fg-rgb: 23, 24, 20;
+  --bg-rgb: 244, 241, 232;
+  --line: rgba(23, 24, 20, 0.11);
+  --line-strong: rgba(23, 24, 20, 0.22);
+  --shadow-sm: 0 6px 16px -10px rgba(70, 66, 40, 0.35);
+  --shadow: 0 28px 60px -32px rgba(70, 66, 40, 0.38);
+  --nav-bg: rgba(244, 241, 232, 0.84);
+  --tip-bg: #171814;
+  --tip-fg: #f4f1e8;
+  --arch-a: #dfe1c8;
+  --arch-b: #ebe8dc;
+  --arch-line: rgba(91, 99, 52, 0.32);
+  --glow: rgba(140, 150, 90, 0.18);
+  --grain: 0.035;
+  --img-shadow: drop-shadow(0 26px 30px rgba(70, 66, 40, 0.28));
+  --spot: rgba(255, 252, 240, 0.85);
+  --rim: rgba(165, 173, 120, 0.22);
+  --foil-1: #9aa16d;
+  --foil-2: #cdd2a8;
+  --foil-3: #7d8455;
+  --foil-ink: #23251a;
+}
+
+:root {
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --fs-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.2rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.75rem);
+  --fs-display: clamp(2.75rem, 1.5rem + 5.2vw, 6.75rem);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1360px;
+  --nav-h: 68px;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.inverse {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Colour cross-fade, only while the theme is switching (class added for ~650ms). */
+html.theme-anim,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    fill 0.5s ease,
+    stroke 0.5s ease,
+    box-shadow 0.5s ease !important;
+}

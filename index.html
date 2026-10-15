@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Abinesh V — Full Stack Developer · Automation Testing · Data Analytics</title>
+    <meta
+      name="description"
+      content="Portfolio of Abinesh V, a Full Stack Developer at Kenshin Systems working across web application development, automation testing, and data analytics."
+    />
+    <meta name="author" content="Abinesh V" />
+    <meta name="theme-color" content="#10110F" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      // Apply the saved theme before first paint (avoids a flash). First visit = dark.
+      ;(function () {
+        var t = null
+        try { t = localStorage.getItem('av-theme') } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = 'dark'
+        document.documentElement.dataset.theme = t
+        var m = document.querySelector('meta[name="theme-color"]')
+        if (m) m.content = t === 'light' ? '#F4F1E8' : '#10110F'
+      })()
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+
+    <!-- Open Graph / social preview. VITE_SITE_URL is set in .env or by the deploy workflow. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Abinesh V — Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="Building digital experiences and engineering better solutions across full-stack development, automation testing, and data analytics."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%" />
+    <meta property="og:image" content="%VITE_SITE_URL%og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abinesh V — Full Stack Developer" />
+    <meta name="twitter:image" content="%VITE_SITE_URL%og-image.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <noscript>
+      <p style="padding:24px;font-family:sans-serif;color:#F5F3EC;background:#10110F">
+        This portfolio needs JavaScript enabled to display.
+      </p>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
