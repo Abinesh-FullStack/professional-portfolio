@@ -21,7 +21,7 @@ const rng = (seed) => () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483
  */
 export default function ScratchCard() {
   const { theme } = useTheme()
-  const email = "abinesh-fullstack@gmail.com"
+  const email = "abinesh.fullstack@gmail.com"
   const wrapRef = useRef(null)
   const canvasRef = useRef(null)
   const state = useRef({ drawing: false, last: null, mid: null, started: false, checkAt: 0, raf: 0 })
